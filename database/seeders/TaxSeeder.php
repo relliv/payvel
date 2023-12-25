@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use \App\Models\Tax;
 
 class TaxSeeder extends Seeder
 {
@@ -12,16 +13,26 @@ class TaxSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Tax::insert([
-            'name' => 'VAT (Value Added Tax) - 18%',
-            'rate' => 18,
-            'created_at' => now(),
-        ]);
+        $taxes = [
+            [
+                'name' => 'GST (Goods and Services Tax) - 10%',
+                'rate' => 10,
+            ],
+            [
+                'name' => 'VAT (Value Added Tax) - 18%',
+                'rate' => 18,
+            ],
+            [
+                'name' => 'VAT (Value Added Tax) - 20%',
+                'rate' => 20,
+            ],
+        ];
 
-        \App\Models\Tax::insert([
-            'name' => 'GST (Goods and Services Tax) - 10%',
-            'rate' => 10,
-            'created_at' => now(),
-        ]);
+        foreach ($taxes as $tax) {
+            Tax::create([
+                ...$tax,
+                'created_at' => now(),
+            ]);
+        }
     }
 }
