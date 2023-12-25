@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Company;
 
 class CompanySeeder extends Seeder
 {
@@ -14,8 +15,8 @@ class CompanySeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Company::insert([
-            'name' => 'Example Company',
+        Company::insert([
+            'name' => 'Your Company',
             'owner' => 'John Doe',
             'tel_number' => '1234567890',
         ]);
