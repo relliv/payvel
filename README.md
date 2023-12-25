@@ -18,9 +18,27 @@
 
 ## Installation
 
+Install PHP dependencies:
+
 ```bash
-composer install
-npm install
+composer install 
+
+# or 
+
+composer install --ignore-platform-reqs
+```
+
+Install NPM dependencies:
+
+```bash
+npm i
+
+# or
+
+pnpm i
+```
+
+```bash
 cp .env.example .env
 php artisan key:generate
 php artisan storage:link

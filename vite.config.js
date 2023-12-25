@@ -4,6 +4,7 @@ import laravel, { refreshPaths } from "laravel-vite-plugin";
 export default defineConfig({
     server: {
         host: "filament.test",
+        port: 3000,
     },
     plugins: [
         laravel({
